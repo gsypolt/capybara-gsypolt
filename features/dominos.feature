@@ -1,13 +1,9 @@
-Feature: Navigate the Top Menu on Dominos
+Feature: Dominos is up
   We want to step through a simple scenario for training
 
+@home
 Scenario: Check the Dominos home page
-  When I visit the home page
+  When I visit the Dominos home page
   Then I should see the Dominos home page
-
-Scenario: Check the Menu on Dominos
-  When
-  Given
-  Then
 
 
