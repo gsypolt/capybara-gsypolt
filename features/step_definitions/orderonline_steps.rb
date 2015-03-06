@@ -19,6 +19,10 @@ end
 # Navigation Steps
 When(/^I click the Order Online tab$/) do
   click_link('Order Online')
+  require "debug"
+  expect(page).to have_css('.Delivery')
+  expect(page).to have_css('.Carryout')
+  expect(page).to have_css('.Locations')
   find('.Delivery').click
 end
 
@@ -37,7 +41,10 @@ end
 
 When(/^I click the Change My Store link$/) do
   click_mystore_change
-  find(:xpath, "//div[@data-storeid='4348']//a[@data-type='Carryout']").click
+  
+  within ("[data-storeid='4348']") do
+      find("[data-type='Carryout']").click
+  end
 end
 
 # Validate
@@ -74,4 +81,3 @@ end
 When(/^I fill out location search$/) do
   fill_out_location
 end
-

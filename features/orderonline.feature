@@ -6,8 +6,9 @@ Background:
 
   @location
   Scenario: Location Search for Dominos Pizza
+    When I click the Order Online tab
     Then I should see the Dominos Location Search page
-    And I click the Order Online tab
+
 
 @form
 Scenario: Fill out Location Search
